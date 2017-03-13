@@ -36,6 +36,10 @@
             text-align: center;
         }
 
+        .circle span.cuerrent{
+            background-color: orangered;
+        }
+
     </style>
 
     <script>
@@ -44,12 +48,22 @@
             var scroll = document.getElementById('scroll');
 
             var circle = document.createElement('div');
-            circle.className = 'circle';
+//            circle.className = 'circle';//设置类名
+            circle.setAttribute("class","circle");
             scroll.appendChild(circle);
 
             var ul = document.getElementById('ul');
             var lis = ul.children;  //ul所有的孩子
-            alert(lis.length);
+//            alert(lis.length);
+            //circle大盒子里面放span
+            for(var i=0; i<lis.length;i++){
+                var newSpan = document.createElement('span');
+                newSpan.innerHTML = i+1;
+                circle.appendChild(newSpan);
+            }
+
+            var span = circle.children[0];
+            span.setAttribute("class","cuerrent");
 
         }
 
