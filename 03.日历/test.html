@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    setInterval(fn,'1000');
+
+    var s= 0,m= 0,h= 0,ms=0;
+    var date = new Date();
+
+    function fn(){
+        ms = date.getMilliseconds();
+        //console.log(ms);
+
+        s = date.getSeconds()+ms/1000;
+
+        m = date.getMinutes()+s/60;
+        //console.log(m);
+
+        h = date.getHours()%12+m/60;
+        console.log(h);
+
+    }
+
+</script>
